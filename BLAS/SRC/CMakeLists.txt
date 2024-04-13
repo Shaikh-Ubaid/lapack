@@ -123,7 +123,7 @@ if(BUILD_INDEX64_EXT_API)
   set_target_properties(${BLASLIB}_64_obj PROPERTIES POSITION_INDEPENDENT_CODE ON)
   #Add _64 suffix to all Fortran functions via macros
   foreach(F IN LISTS SOURCES_64_F)
-      set(COPT_64_F -cpp)
+      set(COPT_64_F --cpp)
       file(STRINGS ${F} ${F}.lst)
       list(FILTER ${F}.lst INCLUDE REGEX "subroutine|SUBROUTINE|external|EXTERNAL|function|FUNCTION")
       list(FILTER ${F}.lst EXCLUDE REGEX "^!.*")
