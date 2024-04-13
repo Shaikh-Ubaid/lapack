@@ -35,14 +35,14 @@
 #
 #######################################################################
 
-set(ALLAUX ilaenv.f ilaenv2stage.f ieeeck.f lsamen.f iparmq.f iparam2stage.F
-   ilaprec.f ilatrans.f ilauplo.f iladiag.f chla_transtype.f la_xisnan.F90
+set(ALLAUX ilaenv.f ilaenv2stage.f ieeeck.f lsamen.f iparmq.f
+   ilaprec.f ilatrans.f ilauplo.f iladiag.f
    ../INSTALL/ilaver.f ../INSTALL/lsame.f xerbla.f xerbla_array.f
    ../INSTALL/slamch.f)
 
 set(SCLAUX
    la_constants.f90
-   sbdsvdx.f sbdsdc.f
+   sbdsdc.f
    sbdsqr.f sdisna.f slabad.f slacpy.f sladiv.f slae2.f  slaebz.f
    slaed0.f slaed1.f slaed2.f slaed3.f slaed4.f slaed5.f slaed6.f
    slaed7.f slaed8.f slaed9.f slaeda.f slaev2.f slagtf.f
@@ -54,7 +54,7 @@ set(SCLAUX
    slasd0.f slasd1.f slasd2.f slasd3.f slasd4.f slasd5.f slasd6.f
    slasd7.f slasd8.f slasda.f slasdq.f slasdt.f
    slaset.f slasq1.f slasq2.f slasq3.f slasq4.f slasq5.f slasq6.f
-   slasr.f  slasrt.f slassq.f90 slasv2.f spttrf.f sstebz.f sstedc.f
+   slasr.f  slasrt.f slasv2.f spttrf.f sstebz.f sstedc.f
    sstein.f ssteqr.f ssterf.f sstevx.f
    slartgp.f slartgs.f ../INSTALL/sroundup_lwork.f
    ${SECOND_SRC})
@@ -83,7 +83,7 @@ set(DZLAUX
 
 set(SLASRC
    sgbbrd.f sgbcon.f sgbequ.f sgbrfs.f sgbsv.f
-   sgbsvx.f sgbtf2.f sgbtrf.f sgbtrs.f sgebak.f sgebal.f sgebd2.f
+   sgbsvx.f sgbtf2.f sgbtrf.f sgbtrs.f sgebak.f sgebd2.f
    sgebrd.f sgecon.f sgeequ.f sgees.f  sgeesx.f sgeev.f  sgeevx.f
    sgehd2.f sgehrd.f sgelq2.f sgelqf.f
    sgels.f  sgelst.f  sgelsd.f sgelss.f sgelsy.f sgeql2.f sgeqlf.f
@@ -95,17 +95,17 @@ set(SLASRC
    sggglm.f sgghrd.f sgghd3.f sgglse.f sggqrf.f
    sggrqf.f sggsvd3.f sggsvp3.f sgtcon.f sgtrfs.f sgtsv.f
    sgtsvx.f sgttrf.f sgttrs.f sgtts2.f shgeqz.f
-   slaqz0.f slaqz1.f slaqz2.f slaqz3.f slaqz4.f
+
    shsein.f shseqr.f slabrd.f slacon.f slacn2.f
    slaein.f slaexc.f slag2.f  slags2.f slagtm.f slagv2.f slahqr.f
-   slahr2.f slaic1.f slaln2.f slals0.f slalsa.f slalsd.f
+   slahr2.f slaic1.f slals0.f slalsa.f slalsd.f
    slangb.f slange.f slangt.f slanhs.f slansb.f slansp.f
    slansy.f slantb.f slantp.f slantr.f slanv2.f
    slapll.f slapmt.f
    slaqgb.f slaqge.f slaqp2.f slaqps.f slaqsb.f slaqsp.f slaqsy.f
-   slaqr0.f slaqr1.f slaqr2.f slaqr3.f slaqr4.f slaqr5.f
+   slaqr0.f slaqr1.f slaqr2.f slaqr3.f slaqr4.f
    slaqtr.f slar1v.f slar2v.f ilaslr.f ilaslc.f
-   slarf.f  slarfb.f slarfb_gett.f slarfg.f slarfgp.f slarft.f slarfx.f slarfy.f
+   slarf.f  slarfb.f slarfb_gett.f slarfg.f slarfgp.f slarfx.f slarfy.f
    slargv.f slarmm.f slarrv.f slartv.f
    slarz.f  slarzb.f slarzt.f slasy2.f
    slasyf.f slasyf_rook.f slasyf_rk.f slasyf_aa.f
@@ -127,35 +127,34 @@ set(SLASRC
    ssptrf.f ssptri.f ssptrs.f sstegr.f sstev.f  sstevd.f sstevr.f
    ssycon.f ssyev.f  ssyevd.f ssyevr.f ssyevx.f ssygs2.f
    ssygst.f ssygv.f  ssygvd.f ssygvx.f ssyrfs.f ssysv.f  ssysvx.f
-   ssytd2.f ssytf2.f ssytrd.f ssytrf.f ssytri.f ssytri2.f ssytri2x.f
-   ssyswapr.f ssytrs.f ssytrs2.f
-   ssyconv.f ssyconvf.f ssyconvf_rook.f
+   ssytd2.f ssytf2.f ssytrd.f ssytrf.f ssytri.f ssytri2.f
+   ssyswapr.f ssytrs.f
    ssytf2_rook.f ssytrf_rook.f ssytrs_rook.f
    ssytri_rook.f ssycon_rook.f ssysv_rook.f
-   ssytf2_rk.f ssytrf_rk.f ssytrs_3.f
-   ssytri_3.f ssytri_3x.f ssycon_3.f ssysv_rk.f
-   ssysv_aa.f ssytrf_aa.f ssytrs_aa.f
+   ssytf2_rk.f ssytrf_rk.f
+   ssytri_3.f ssycon_3.f ssysv_rk.f
+   ssysv_aa.f ssytrf_aa.f
    ssysv_aa_2stage.f ssytrf_aa_2stage.f ssytrs_aa_2stage.f
    stbcon.f
    stbrfs.f stbtrs.f stgevc.f stgex2.f stgexc.f stgsen.f
    stgsja.f stgsna.f stgsy2.f stgsyl.f stpcon.f stprfs.f stptri.f
    stptrs.f
    strcon.f strevc.f strevc3.f strexc.f strrfs.f strsen.f strsna.f strsyl.f
-   strsyl3.f strti2.f strtri.f strtrs.f stzrzf.f sstemr.f
+   strti2.f strtri.f strtrs.f stzrzf.f sstemr.f
    slansf.f spftrf.f spftri.f spftrs.f ssfrk.f stfsm.f stftri.f stfttp.f
    stfttr.f stpttf.f stpttr.f strttf.f strttp.f
    sgejsv.f sgesvj.f sgsvj0.f sgsvj1.f
    sgeequb.f ssyequb.f spoequb.f sgbequb.f
-   sbbcsd.f slapmr.f sorbdb.f sorbdb1.f sorbdb2.f sorbdb3.f sorbdb4.f
+   slapmr.f sorbdb.f sorbdb1.f sorbdb2.f sorbdb3.f sorbdb4.f
    sorbdb5.f sorbdb6.f sorcsd.f sorcsd2by1.f
    sgeqrt.f sgeqrt2.f sgeqrt3.f sgemqrt.f
    stpqrt.f stpqrt2.f stpmqrt.f stprfb.f
    sgelqt.f sgelqt3.f sgemlqt.f
-   sgetsls.f sgetsqrhrt.f sgeqr.f slatsqr.f slamtsqr.f sgemqr.f
+   sgetsls.f sgeqr.f slatsqr.f slamtsqr.f sgemqr.f
    sgelq.f slaswlq.f slamswlq.f sgemlq.f
    stplqt.f stplqt2.f stpmlqt.f
-   sorhr_col.f slaorhr_col_getrfnp.f slaorhr_col_getrfnp2.f
-   ssytrd_2stage.f ssytrd_sy2sb.f ssytrd_sb2st.F ssb2st_kernels.f
+   sorhr_col.f slaorhr_col_getrfnp2.f
+   ssytrd_2stage.f ssytrd_sy2sb.f ssb2st_kernels.f
    ssyevd_2stage.f ssyev_2stage.f ssyevx_2stage.f ssyevr_2stage.f
    ssbev_2stage.f ssbevx_2stage.f ssbevd_2stage.f ssygv_2stage.f
    sgesvdq.f sgedmd.f90 sgedmdq.f90)
