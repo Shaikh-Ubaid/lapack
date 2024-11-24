@@ -38,6 +38,7 @@ LAPACKE/example/xexample*
 SRC/*-e
 LAPACKE/src/*-e
 **/build/*
+!build/build.sh
 
 # DOCS documentation
 DOCS/man
