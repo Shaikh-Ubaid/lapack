@@ -330,13 +330,13 @@ if(NOT LATESTLAPACK_FOUND)
   set(SECOND_SRC ${LAPACK_SOURCE_DIR}/INSTALL/second_${TIME_FUNC}.f)
   set(DSECOND_SRC ${LAPACK_SOURCE_DIR}/INSTALL/dsecnd_${TIME_FUNC}.f)
 
-  add_subdirectory(SRC)
+  # add_subdirectory(SRC)
 else()
   add_link_options(${LAPACK_LINKER_FLAGS})
 endif()
 
 if(BUILD_TESTING)
-  add_subdirectory(TESTING)
+  # add_subdirectory(TESTING)
 endif()
 
 # --------------------------------------------------
