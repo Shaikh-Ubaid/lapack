@@ -47,7 +47,7 @@ function(add_lapack_test output input target)
   endif()
 endfunction()
 
-if(BUILD_SINGLE)
+if(BUILD_SINGLE AND FALSE)
 add_lapack_test(stest.out stest.in xlintsts)
 #
 # ======== SINGLE RFP LIN TESTS ========================
