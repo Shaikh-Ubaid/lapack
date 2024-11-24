@@ -1114,8 +1114,8 @@
       PARAMETER         (HALF=0.5E+0, ONE=1.0E+0, TWO= 2.0E+0,
      &                  ZERO=0.0E+0)
 *     .. External Functions ..
-      REAL              SNRM2
-      EXTERNAL          SNRM2
+      REAL              SNRM2, SXVALS
+      EXTERNAL          SNRM2, SXVALS
 *     .. Intrinsic Functions ..
       INTRINSIC         ABS, MAX, MIN, REAL, SQRT
 *     .. Model parameters ..
@@ -1273,7 +1273,8 @@
    98 FORMAT( 1X, A6, ': N=', I6,', INCX=', I4, ', IV=', I2, ', IW=',
      +  I2, ', test=', E15.8 )
       RETURN
-      CONTAINS
+      END
+
       REAL FUNCTION SXVALS(XX,K)
 *     .. Scalar Arguments ..
       REAL              XX
@@ -1298,5 +1299,4 @@
       END IF
       SXVALS = X
       RETURN
-      END
       END
