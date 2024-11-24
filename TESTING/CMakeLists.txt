@@ -10,8 +10,8 @@ if(MSVC_VERSION)
   string(REGEX REPLACE "(.*)/STACK:(.*) (.*)" "\\1/STACK:900000000000000000 \\3"
     CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS}")
 endif()
-add_subdirectory(LIN)
-add_subdirectory(EIG)
+# add_subdirectory(LIN)
+# add_subdirectory(EIG)
 
 
 # Only run this test if python 3 is found

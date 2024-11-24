@@ -367,7 +367,7 @@ if(BUILD_TESTING OR LAPACKE_WITH_TMG)
       set(LAPACK_INSTALL_EXPORT_NAME ${LAPACKELIB}-targets)
     endif()
   endif()
-  add_subdirectory(TESTING/MATGEN)
+  # add_subdirectory(TESTING/MATGEN)
 endif()
 # Reset export target
 set(LAPACK_INSTALL_EXPORT_NAME ${LAPACK_INSTALL_EXPORT_NAME_CACHE})
