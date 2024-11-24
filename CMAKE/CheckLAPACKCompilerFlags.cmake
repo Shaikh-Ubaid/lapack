@@ -182,6 +182,13 @@ macro(CheckLAPACKCompilerFlags)
       endif()
     endif()
 
+  # LFortran
+  elseif(CMAKE_Fortran_COMPILER_ID STREQUAL "LFortran")
+    # Maybe later add some flag for allocating arrays on stack
+    # the else case of this if instructs that
+    add_compile_options("$<$<COMPILE_LANGUAGE:Fortran>:--fixed-form-infer>")
+    add_compile_options("$<$<COMPILE_LANGUAGE:Fortran>:--implicit-interface>")
+
   else()
     message(WARNING "Fortran local arrays should be allocated on the stack."
       " Please use a compiler which guarantees that feature."
