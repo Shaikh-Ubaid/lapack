@@ -305,6 +305,7 @@ if(LAPACK_LIBRARIES)
   endif()
 endif()
 
+set(LATESTLAPACK_FOUND TRUE)
 # Neither user specified or optimized LAPACK libraries can be used
 if(NOT LATESTLAPACK_FOUND)
   message(STATUS "Using supplied NETLIB LAPACK implementation")
