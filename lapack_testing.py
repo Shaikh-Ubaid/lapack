@@ -83,7 +83,8 @@ for o, a in opts:
 # process options
 
 abs_bin_dir=os.path.abspath(bin_dir)
-
+if not os.path.exists(test_dir):
+    os.makedirs(test_dir)
 os.chdir(test_dir)
 
 execution=1
