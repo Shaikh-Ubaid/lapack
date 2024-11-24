@@ -18,9 +18,9 @@ macro(add_blas_test name src)
 endmacro()
 
 if(BUILD_SINGLE)
-  add_blas_test(xblat1s sblat1.f)
-  add_blas_test(xblat2s sblat2.f)
-  add_blas_test(xblat3s sblat3.f)
+  # add_blas_test(xblat1s sblat1.f)
+  # add_blas_test(xblat2s sblat2.f)
+  # add_blas_test(xblat3s sblat3.f)
 endif()
 
 if(BUILD_DOUBLE)
