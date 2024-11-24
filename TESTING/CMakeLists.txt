@@ -13,18 +13,6 @@ endif()
 add_subdirectory(LIN)
 add_subdirectory(EIG)
 
-
-# Only run this test if python 3 is found
-if(PYTHON_EXECUTABLE AND LAPACK_TESTING_USE_PYTHON)
-  message(STATUS "Enabling LAPACK test summary (see TESTING/testing_results.txt)")
-  file(COPY ${LAPACK_SOURCE_DIR}/lapack_testing.py DESTINATION ${LAPACK_BINARY_DIR})
-  add_test(
-    NAME LAPACK_Test_Summary
-    WORKING_DIRECTORY ${LAPACK_BINARY_DIR}
-    COMMAND ${PYTHON_EXECUTABLE} "lapack_testing.py"
-    )
-endif()
-
 function(add_lapack_test output input target)
   set(TEST_INPUT "${LAPACK_SOURCE_DIR}/TESTING/${input}")
   set(TEST_OUTPUT "${LAPACK_BINARY_DIR}/TESTING/${output}")
